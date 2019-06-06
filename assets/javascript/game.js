@@ -16,6 +16,13 @@ var game = {
     isWin: false,
     isLoss: false,
 
+    startOver: function() {
+        var me = this;
+
+        me.winsCount = 0;
+        me.lossCount = 0;
+        me.reset();
+    },
     // Resets game with initial values (randomly generated goal and each crystal values).
     reset: function(){
         var me = this;
@@ -59,14 +66,12 @@ var game = {
         $("#goalValue").text(me.goalValue);
         $("#currentValue").text(me.currentValue);
 
-        $("#stats").html(me.winsCount + "&nbsp; / &nbsp;" + me.lossCount);
-        $("#stats").css("background-color", "white");
+        $("#stats").html("Wins: " + me.winsCount + "<br>Losses: " + me.lossCount);
+        $("#stats").css("background-color", "bisque");
         if (me.isWin) {
-            debugger;
-            $("#stats").css("background-color", "lightgreen");
+            $("#stats").css("background-color", "green");
         }
         if (me.isLoss) {
-            debugger;
             $("#stats").css("background-color", "pink");
         }
     }
@@ -80,13 +85,17 @@ function getRandomValue(min, max) {
 // Ready function
 $(document).ready(function() {
     // Start new game
-    game.reset();
+    game.startOver();
 
     // Attach click handler for crystal elements
     $(".crystal").click(function() {
         var crystalNumber = $(this).attr("data-crystal-number");
 
         game.selectCrystal(crystalNumber);
+    });
+    // Attach click hander to reset buttom
+    $("#new").click(function() {
+        game.startOver();
     });
     // Attach click hander to reset buttom
     $("#reset").click(function() {
