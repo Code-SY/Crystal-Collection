@@ -1,6 +1,6 @@
 # Title
-My web site name is Crystal Collection.A player has to gues and count numbers that hidden under crystals. If his calculation right hi wins and box (wins/losses) hihglits in green color  and winning number adds if playr made calculations wrong box light ups in pink color and loosses numbers are  added.
-Player can play and wins/losses will adds up. When playr whants he can start new game with start over botton.
+My web site name is Crystal Collection.A player has to guess and count numbers that hidden under crystals. If his calculation right hi wins and box (wins/losses) highlights in green color  and winning number adds if playr made calculations wrong box light ups in pink color and loosses numbers are  added.
+Player can play many times and wins/losses will adds up. When playr wants he can start new game with /start over/ botton.
 Background has a different colors with different size of screen.
 
  ## Prerequisites
